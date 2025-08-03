@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VNX Smart Mute</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background-color: #f0f4f8; color: #333; }
+    h2 { color: #007BFF; }
+    .btn, .toggle {
+      padding: 10px 15px;
+      margin-top: 10px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .toggle {
+      background: #28a745;
+    }
+    .form-group { margin-bottom: 10px; }
+    input[type="email"], input[type="password"] {
+      padding: 8px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h2>VNX Smart Mute</h2>
+  <p>Status: <strong id="status">Enabled</strong></p>
+  <button class="toggle" onclick="toggleMute()">Toggle Mute</button>
+  <hr />
+  <h3>Sign In</h3>
+  <div class="form-group">
+    <input type="email" id="email" placeholder="Email" />
+  </div>
+  <div class="form-group">
+    <input type="password" id="password" placeholder="Password" />
+  </div>
+  <button class="btn" onclick="alert('Login not implemented - Placeholder only')">Login</button>
+  <script>
+    let enabled = true;
+    function toggleMute() {
+      enabled = !enabled;
+      document.getElementById("status").textContent = enabled ? "Enabled" : "Disabled";
+      alert("Smart mute is now " + (enabled ? "enabled" : "disabled"));
+    }
+  </script>
+</body>
+</html>
