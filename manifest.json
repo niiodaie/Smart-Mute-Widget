@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "VNX Smart Mute for YouTube",
+  "description": "Mutes YouTube tab during ads and unmutes after.",
+  "version": "1.0",
+  "permissions": ["tabs", "scripting"],
+  "host_permissions": ["*://www.youtube.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "128": "icons/icon128.png"
+    },
+    "default_title": "VNX Smart Mute"
+  }
+}
